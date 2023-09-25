@@ -32,7 +32,10 @@ It is critical to understand addressing system of the neopixel. The first neopix
  The data line between the neopixel string and pin 6 of our Arduino Uno is buffered using a 470-ohm resistor. This protects the first WS2812B in the chain from abrupt changes in pin voltage.
  The 5-volt power supply to the LED matrix is buffered using a 1 millifarad capacitor. This protects the power supply from sudden and dramatic changes in current consumption by the LEDs.
  256 LEDs at full brightness can draw almost three amperes, so switching from zero to 255 brightness in a tenth of a millisecond is stressful on most power supplies.
- This custom circuitry is mounted on free space available on the Bluefruit module. [TODO insert photo of device]
+ This custom circuitry is mounted on free space available on the Bluefruit module.
+ 
+ ![](https://github.com/xcellsior/Arduino-BLE-Backpack/blob/main/images/arduino.png)
+ 
  A three pin JST connector is used to connect this power circuitry.  The prototype backpack used a JST to USB adapter to supply power from a battery bank normally used to charge mobile devices.
  
  The Bluetooth network interface card is an Adafruit Bluefruit LE module. It communicates with the Arduino Uno using SPI.
