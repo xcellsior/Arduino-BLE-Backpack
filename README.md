@@ -29,7 +29,7 @@ It is critical to understand addressing system of the neopixel. The first neopix
  then passes all remaining bits to the next pixel in the series. This is how to address each pixel using a single wire bus. Once the cycle has completed and 
  all pixels have been programmed, hold the line low for 50 microseconds to tell all WS2812Bs that the cycle is done and they should watch for their next set of bits.
  
- The data line between the neopixel string and pin 6 of our Arduino Uno is buffered using a 470-ohm resistor. This protects the first WS2812B in the chain from abrupt changes in pin voltage.
+ The data line between the neopixel string and pin 6 of the Arduino Uno is buffered using a 470-ohm resistor. This protects the first WS2812B in the chain from abrupt changes in pin voltage.
  The 5-volt power supply to the LED matrix is buffered using a 1 millifarad capacitor. This protects the power supply from sudden and dramatic changes in current consumption by the LEDs.
  256 LEDs at full brightness can draw almost three amperes, so switching from zero to 255 brightness in a tenth of a millisecond is stressful on most power supplies.
  This custom circuitry is mounted on free space available on the Bluefruit module.
@@ -42,26 +42,26 @@ It is critical to understand addressing system of the neopixel. The first neopix
  
 # Software and User Controls
 
-First, initialize the color table and initialize the neopixels and set them to ‘off’. The Bluetooth module is set to data mode.
+First, the code initializes the color table and initialize the neopixels and set them to ‘off’. The Bluetooth module is set to data mode.
  Next, in the main loop, it waits for a connection. When there is a connection, it waits to receive a UART message. It then runs the module based on the input message.
  The rainbow module is a mathematical sine function that prints 17 rows to the color table, giving it the appearance of motion. For still images or gif animations, it loads their byte values for each RGB color from ROM into the buffer in RAM.
  
  Available modes (from forest22.ino):
  
- 'q' - quit to Bluetooth connect page
+ 'q' - Quit to Bluetooth connect page
  
- 'm' - run Mario
+ 'm' - Run Mario
  
- 'L' - run Malleo
+ 'L' - Run Malleo
  
- 'r' - run rainbow
+ 'r' - Display rainbow
  
- 'f' - run Forgotten Runes items
+ 'f' - Show Forgotten Runes items
  
- 't' - run rainbow theater chase
+ 't' - Display rainbow theater chase
  
- 'c' - chaos mode
+ 'c' - Chaos mode
  
- 'd' - minecraft diamonds
+ 'd' - Minecraft diamonds
  
  After connecting to the device with a Bluetooth terminal, send these characters to change the mode.
