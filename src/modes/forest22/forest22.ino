@@ -1,5 +1,4 @@
 // include statements
-// include statements
 #include <Adafruit_NeoPixel.h>
 #ifdef __AVR__
 	#include <avr/power.h>
@@ -196,33 +195,6 @@ void disconnect_callback(uint16_t conn_handle, uint8_t reason)
 // main
 void loop()
 {
-//  if ( Bluefruit.Central.connected() ){
-//        // default MTU with an extra byte for string terminator
-//    char buf[20+1] = { 0 };
-//    
-//    // Read from HW Serial (normally USB Serial) and send to all peripherals
-//    if ( Serial.readBytes(buf, sizeof(buf)-1) )
-//    {
-//      sendAll(buf);
-//    }
-//    int command = bleuart.read();
-//    switch (command) {
-//      case 'm': // run Mario
-//      case 'M':
-//      {
-//        runMario();
-//        break;
-//      }
-//      case 'b': // run breathing
-//      case 'B':
-//      {
-//        //runBreathing(128);
-//        rainbowCycle();
-//        break;
-//      }
-//    }
-//  }
-
   if (!Bluefruit.Central.connected())
   {
     image = bluetoothConnect;
@@ -249,33 +221,6 @@ void loop()
         runMalleo();
         break;
       }
-//      case 'b': // run breathing
-//      case 'B':
-//      {
-//        int idx = 0;
-//        while(1){
-//          char brightness[2];
-//          charRead = bleuart.read();
-//          brightness[idx++] = charRead; 
-//
-//          if (idx > 1){
-//            idx = 0;
-//            // set brightness
-//            uint32_t brightnessInt = brightness[0];
-//            brightnessInt |= brightness[0] << 24;
-//            brightnessInt |= brightness[1] << 16;
-//            Serial.write(brightnessInt);
-//            strip.setBrightness(brightnessInt);
-//            strip.show();
-//          }
-//          if ((char)charRead == 'q' || (char)charRead == 'Q')
-//          break;
-//        }
-//        
-//        //runBreathing(128);
-//        rainbowCycle();
-//        break;
-//      }
      case '1':
      {
       strip.setBrightness(10);
@@ -368,28 +313,9 @@ void loop()
       }
     }
   }
-	
-	// display item
-// for (int i = 0; i < 20; i++) {
-//    image = mario1;
-//  load();
-//  strip.show();
-//  delay(100);
-//
-//      image = mario2;
-//  load();
-//  strip.show();
-//  delay(100);
-//
-//      image = marioStanding;
-//  load();
-//  strip.show();
-//  delay(100);
-//  }
-
 }
 
-//pick a random thing to display
+// pick a random thing to display
 void chaos(){
   while(1){
   randNumber = random(15);
@@ -485,30 +411,6 @@ void chaos(){
       lsdg(timer);
       break;
     }
-//    case 16:{
-//      image = flower;
-//      load();
-//      strip.show();
-//
-//      delay(timer);
-//      break;
-//    }
-//    case 17:{
-//      image = flower;
-//      load();
-//      strip.show();
-//
-//      delay(timer);
-//      break;
-//    }
-//    case 18:{
-//      image = flower;
-//      load();
-//      strip.show();
-//
-//      delay(timer);
-//      break;
-//    }
   }
   charRead = bleuart.read();
     if ((char)charRead == 'q' || (char)charRead == 'Q')
