@@ -1,6 +1,7 @@
 # Arduino-BLE-Backpack
 A BLE-enabled LED matrix controller attached to a backpack with custom modes
 
+![](https://github.com/xcellsior/Arduino-BLE-Backpack/blob/main/images/backpack.gif)
 
 The idea behind this project is to create a matrix of LEDs that can be controlled from 
 your smartphone via an Arduino. Specifically, this project uses a Bluetooth terminal application 
@@ -20,7 +21,7 @@ one pixel at a time. The Arduino and LED matrix are powered by a battery via USB
 
 The hardware includes: LED Neopixel matrix, an embedded system (Arduino), and an android device. The LED matrix consists of 256 individually addressable 
 neopixels wired serially. Each neopixel utilizes the WS2812B integrated circuit underneath to drive the colors. It supports 24 bit color depth.
-Each neopixel has four pins; two pins carry 5-volt power to drive the LED, the other two pins are data-in and data-out for single wire communication bus.
+Each neopixel has four pins; two pins carry 5-volt power to drive the LED, the2222 other two pins are data-in and data-out for single wire communication bus.
 
 
 It is critical to understand addressing system of the neopixel. The first neopixel in the string collects the first 24-bits sent by the Arduino, representing 8-bit values for green,
